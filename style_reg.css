@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Minion Variable Concept';
+    font-family: 'Roboto';
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -71,11 +71,11 @@ form {
     width: 60%;
     margin: 50px auto;
     padding: 20px;
-    background: linear-gradient(145deg, #1e1e1e, #2b2b2b);
+    background: #505168;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 -5px 10px rgba(255, 255, 255, 0.1);
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     animation: fadeIn 1.5s ease-in-out;
     transform-origin: center;
 }
@@ -84,12 +84,12 @@ form label {
     display: block;
     font-size: 1.2rem;
     margin-bottom: 8px;
-    color: #7fdbff;
+    color: white;
     transition: color 0.3s ease-in-out;
 }
 
 form label:hover {
-    color: #ff7b00;
+    color: #b1b3e5;
 }
 
 form input,
@@ -109,8 +109,8 @@ form select {
 
 form input:focus,
 form select:focus {
-    border-color: #7fdbff;
-    box-shadow: 0 0 10px #7fdbff;
+    border-color: #b1b3e5;
+    box-shadow: 0 0 10px #b1b3e5;
     background: linear-gradient(145deg, #222, #333);
 }
 
