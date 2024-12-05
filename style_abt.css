@@ -85,7 +85,6 @@ header a:hover {
             flex: 1;
             padding: 20px;
             background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px;
             border-radius: 8px;
             max-width: 500px;
@@ -107,16 +106,14 @@ header a:hover {
             align-items: center;
             padding: 20px;
             margin: 20px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
             border-radius: 8px;
-            max-width: 300px;
+            max-width: 600px;
         }
 
         .logo {
             width: 150px;
             height: 150px;
-            background-color: #ccc;
             border-radius: 8px;
             display: flex;
             justify-content: center;
@@ -138,7 +135,7 @@ header a:hover {
             height: 70px;
             object-fit: cover;
             border-radius: 4px;
-            border: 1px solid #ddd;
+            
         }
 
         @media (max-width: 768px) {
@@ -151,3 +148,30 @@ header a:hover {
                 max-width: 90%;
             }
         }
+
+        #partnerat{
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+          }
+          
+          .footer-container a {
+            color: #1e90ff;
+            text-decoration: none;
+          }
+          
+          .footer-container a:hover {
+            text-decoration: underline;
+          }
+          
+          .footer-container p {
+            margin: 5px 0;
+          }
