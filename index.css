@@ -5,9 +5,7 @@
     font-family: "Lato", sans-serif;
 }
 
-body {
-  
-}
+
 
 header {
     display: flex;
@@ -281,6 +279,7 @@ header a:hover {
 
 .social-links a:hover {
     color: #fafafa;
+    text-decoration: underline;
 }
 
 
