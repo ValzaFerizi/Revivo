@@ -2,18 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Minion Variable Concept';
+    font-family: "Lato", sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
+  
 }
 
 header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #505168;
+    background-color: #fafafa;
+    border-bottom: 1px solid #1a1a1a;
     padding: 15px;
 }
 
@@ -34,19 +35,22 @@ header ul {
 
 header li {
     margin: 0 6px;
-    color: whitesmoke;
+    color: #1a1a1a;
 }
 header a {
     text-decoration: none;
-    color: white;
+    color: #1a1a1a;
     font-size: 14px;
-    padding:  2px;
+    padding:  10px;
     transition: background-color 0.3s ease-in-out;
    
 }
 
 header a:hover {
-    background-color: #0056b3;
+   color: #1a1a1a;
+   border-bottom: 1px solid #1a1a1a;
+   border-bottom-width: thin;
+   padding: 10px;
 }
 
 @media (max-width: 768px) {
@@ -67,27 +71,31 @@ header a:hover {
 }
 
 .searchbari{
-   padding: 200px;
-   background: hsla(238, 13%, 36%, 1);
+    background-image: url(makeup.jpg);
+    background-size: cover;
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+   
 
-background: linear-gradient(270deg, hsla(238, 13%, 36%, 1) 13%, hsla(264, 83%, 84%, 1) 48%, hsla(248, 60%, 87%, 1) 77%, hsla(0, 0%, 100%, 1) 100%);
-
-background: -moz-linear-gradient(270deg, hsla(238, 13%, 36%, 1) 13%, hsla(264, 83%, 84%, 1) 48%, hsla(248, 60%, 87%, 1) 77%, hsla(0, 0%, 100%, 1) 100%);
-
-background: -webkit-linear-gradient(270deg, hsla(238, 13%, 36%, 1) 13%, hsla(264, 83%, 84%, 1) 48%, hsla(248, 60%, 87%, 1) 77%, hsla(0, 0%, 100%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#505168", endColorstr="#D0B6F8", GradientType=1 );
-}
+} 
 
 #para{
     margin-bottom: 20px;
-    margin-left: 19%;
     font-size: 45px;
-    color: whitesmoke;
-    font-family: 'Minion Variable Concept';
+    color: #1a1a1a;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
 }
 #para span{
-    color: #505168;
+    color: #fafafa;
+  
+   
 }
 .search-bar {
     position: relative;
@@ -133,7 +141,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#505168", en
 .box {
 
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 3px;
     width: calc(33.333% - 20px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -167,25 +175,28 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#505168", en
 
 .box .price {
     font-size: 16px;
-    color: #505168 ;
+    color: #1a1a1a ;
     font-weight: bold;
     margin: 10px 0;
 }
 
 .book-now {
-    background-color: #505168;
-    color: white;
+    background-color: #1a1a1a;
+    color: #fafafa;
     border: none;
     padding: 10px 15px;
     font-size: 14px;
-    border-radius: 25px;
+    border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-bottom: 15px;
 }
 
 .book-now:hover {
-    background-color: #0056b3;
+    background-color: #fafafa;
+    border: 1px solid #1a1a1a;
+    border-width: thin;
+    color: #1a1a1a;
 }
 
 @media (max-width: 768px) {
@@ -199,10 +210,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#505168", en
     }
 }
  
- .last h1{
-    color: #505168;
+ .te-re h1{
+    color: #1a1a1a;
     padding: 25px;
-    margin-left: 35%;
+    font-weight: 300;
+    text-align: center;
+    font-size: 28px;
  }
 
  .sherbimet{
@@ -216,22 +229,63 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#505168", en
     height: 230px;
     width: 230px;
  }
- footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
+ 
   
-  .footer-container a {
-    color: #1e90ff;
-    text-decoration: none;
-  }
-  
-  .footer-container a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-container p {
+  footer {
+    background-color: #1a1a1a;
+    color: #fafafa;
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 80px; 
+}
+
+.footer-block {
+    width: 38%; 
+}
+
+.footer-block p {
     margin: 5px 0;
-  }
+}
+
+.footer-block a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.footer-block a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px; 
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: color 0.3s ease;    
+}
+
+.social-links a:hover {
+    color: #fafafa;
+}
+
+
+@media (max-width: 768px) {
+    .footer-block {
+        width: 100%; 
+    }
+}
