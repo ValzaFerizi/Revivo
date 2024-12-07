@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+
+
+header {
+    display: flex;
+    ;
+    align-items: center;
+    background-color: #fafafa;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+header img {
+    height: 45px;
+    object-fit: contain;
+    justify-self: left;
+    margin-right: 750px;
+    margin-left: 10px;
+}
+
+header ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    list-style: none;
+}
+
+header li {
+    margin: 0 6px;
+    color: #1a1a1a;
+}
+header a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    padding:  10px;
+    transition: background-color 0.3s ease-in-out;
+   
+}
+
+header a:hover {
+   color: #1a1a1a;
+   border-bottom: 1px solid #1a1a1a;
+   border-bottom-width: thin;
+   padding: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    header li {
+        margin: 10px 0;
+    }
+}
+.feedback-container {
+    margin-left: 450px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.rating label {
+    cursor: pointer;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating .star {
+    font-size: 2rem;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.rating input:checked ~ .star {
+    color: gold;
+}
+
+.rating input:hover ~ .star,
+.rating label:hover ~ label .star {
+    color: gold;
+}
+
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 376px;
+    text-wrap: wrap;
+
+}
+
+button {
+    margin-left: 95px;
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #fafafa;
+    border: 1px solid #1a1a1a;
+    border-width: thin;
+    color: #1a1a1a;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer-container a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  .footer-container a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-container p {
+    margin: 5px 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #505168;
+    padding: 15px;
+}
+
+header img {
+    height: 45px;
+    object-fit: contain;
+    justify-self: left;
+    margin-right: 750px;
+    margin-left: 10px;
+}
+
+header ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    list-style: none;
+}
+
+header li {
+    margin: 0 6px;
+    color: whitesmoke;
+}
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding:  2px;
+    transition: background-color 0.3s ease-in-out;
+   
+}
+
+header a:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    header li {
+        margin: 10px 0;
+    }
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #fafafa;
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 80px; 
+}
+
+.footer-block {
+    width: 38%; 
+}
+
+.footer-block p {
+    margin: 5px 0;
+}
+
+.footer-block a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.footer-block a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px; 
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: color 0.3s ease;    
+}
+
+.social-links a:hover {
+    color: #fafafa;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .footer-block {
+        width: 100%; 
+    }
+}

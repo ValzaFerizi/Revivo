@@ -2,18 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Lato', sans-serif;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-}
 
 header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #505168;
+    background-color: #fafafa;
+    border-bottom: 1px solid #1a1a1a;
     padding: 15px;
 }
 
@@ -33,21 +31,23 @@ header ul {
 }
 
 header li {
-    margin: 0 10px;
-    color: whitesmoke;
+    margin: 0 6px;
+    color: #1a1a1a;
 }
-
 header a {
     text-decoration: none;
-    color: white;
+    color: #1a1a1a;
     font-size: 14px;
-    padding:  5px;
+    padding:  10px;
     transition: background-color 0.3s ease-in-out;
    
 }
 
 header a:hover {
-    background-color: #0056b3;
+   color: #1a1a1a;
+   border-bottom: 1px solid #1a1a1a;
+   border-bottom-width: thin;
+   padding: 10px;
 }
 
 @media (max-width: 768px) {
@@ -68,28 +68,31 @@ header a:hover {
 }
 
 form {
-    width: 60%;
+    width: 40%;
     margin: 50px auto;
     padding: 20px;
-    background: #505168;
+    background: #fafafa;
     border-radius: 15px;
+    border: solid #1a1a1a;
+    border-width: thin;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 -5px 10px rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+    color: #1a1a1a;
+    font-family: 'Lato', sans-serif;
     animation: fadeIn 1.5s ease-in-out;
-    transform-origin: center;
+    
 }
 
 form label {
+    
     display: block;
-    font-size: 1.2rem;
+    font-size: 15px;
     margin-bottom: 8px;
-    color: white;
+    color: #1a1a1a;
     transition: color 0.3s ease-in-out;
 }
 
 form label:hover {
-    color: #b1b3e5;
+    color: #222;
 }
 
 form input,
@@ -99,7 +102,6 @@ form select {
     margin-bottom: 20px;
     border: 2px solid #444;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     font-size: 1rem;
     outline: none;
@@ -109,36 +111,46 @@ form select {
 
 form input:focus,
 form select:focus {
-    border-color: #b1b3e5;
-    box-shadow: 0 0 10px #b1b3e5;
-    background: linear-gradient(145deg, #222, #333);
-}
+    border-color: #1a1a1a;
+    box-shadow: 0 0 10px #1a1a1a;
+    
+} 
 
 form button {
-    width: 100%;
+    margin-left: 110px;
+    width: 50%;
     padding: 12px;
-    border: none;
+    border: 1px solid #1a1a1a;
     border-radius: 5px;
-    background: linear-gradient(90deg, #7fdbff, #ff7b00);
+    background: #1a1a1a;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(255, 127, 0, 0.5);
+    margin-top: 30px;
+   
+    
 }
 
 form button:hover {
-    background: linear-gradient(90deg, #ff7b00, #7fdbff);
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(255, 127, 0, 0.7);
+    background: #fafafa;
+   color: #1a1a1a;
+   border: 1px solid ;
 }
 
-form button:active {
-    transform: translateY(2px) scale(0.95);
-    box-shadow: 0 5px 10px rgba(255, 127, 0, 0.5);
+form h1{
+    font-size: 12px;
+    margin-left: 110px;
+    
 }
 
+form a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+form a:hover{
+    text-decoration: underline;
+}
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -148,4 +160,87 @@ form button:active {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #fafafa;
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 80px; 
+}
+
+.footer-block {
+    width: 38%; 
+}
+
+.footer-block p {
+    margin: 5px 0;
+}
+
+.footer-block a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.footer-block a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px; 
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: color 0.3s ease;    
+}
+
+.social-links a:hover {
+    color: #fafafa;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .footer-block {
+        width: 100%; 
+    }
+}
+
+#teksti{
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.paragrafi{
+    margin-bottom: 25px;
+    margin-left: 36px;
+}
+
+select option{
+    color: #1a1a1a;
+}
+#titulli{
+    margin-left: 110px;
+    margin-bottom: 10px;
+}
+
+#linkat{
+    margin-left: 155px;
 }
