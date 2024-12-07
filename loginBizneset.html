@@ -11,19 +11,24 @@
     <header>
       <img src="logo.jpg" alt="">
       <ul>
+          <li><a href="index.html">Home </a></li>
           <li><a href="feedback.html">Feedback</a></li>
           <li><a href="aboutus.html">About Us</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="register.html">Sign Up</a></li>
+          
+        
       </ul>
   </header>
    
-    <form action="#" method="POST">
+    <form action="submit">
       <h2 id="teksti">Let's get your business registered!</h2>
       <div class="form-container">
        
         <p class="paragrafi">Fill in your details below to create your business profile.</p>
     
+        <label for="first-name">Business Name:</label>
+      <input type="text" id="bussiness-name" name="business-name" placeholder="Enter your business name" required>
+
       <label for="first-name">First Name:</label>
       <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
 
@@ -61,6 +66,7 @@
     <p>&copy; 2024 Revivo. All Rights Reserved.</p></div>
     </div>
   </footer>
+  <script src="scriptValidimiBiznes.js"></script>
 </body>
 </html>
 
