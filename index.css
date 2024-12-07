@@ -220,34 +220,47 @@ header a:hover {
  .rezervimet {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; 
-    gap: 30px; 
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
-    margin-left: 250px;
+    margin: 0 auto;
+    width: 80%;
 }
- .sherbimet {    
-    margin-right: 205px;
-    
+
+.sherbimet {
+    position: relative;
+    width: calc(33.333% - 20px);
+    max-width: 300px;
+    margin-bottom: 20px;
     overflow: hidden;
-    width: 230px;
-    height: 230px;
-    cursor: pointer;
-    display: flex;
-     flex-wrap: wrap;
-     width: calc(33.333% - 20px);
-    max-width: 230px;
-     
+    text-align: center;
 }
 
 .sherbimet img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     transition: opacity 0.3s ease-in-out;
 }
 
+.sherbimet p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
 .sherbimet:hover img {
-    opacity: 0.6;
+    opacity: 0.7;
+}
+
+.sherbimet a {
+    display: block;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
 }
 
 .sherbimet::after {
@@ -267,7 +280,7 @@ header a:hover {
 .sherbimet:hover::after {
     opacity: 1;
 }
- 
+
   
   footer {
     background-color: #1a1a1a;
@@ -327,4 +340,12 @@ header a:hover {
     .footer-block {
         width: 100%; 
     }
+}
+
+.book-now a{
+    text-decoration: none;
+    color: #fafafa;
+}
+.book-now a:hover{
+    color: #1a1a1a;
 }

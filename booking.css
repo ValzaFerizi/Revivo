@@ -16,6 +16,7 @@ header {
   background-color: #fafafa;
   border-bottom: 1px solid #1a1a1a;
   padding: 15px;
+  margin-bottom:50px;
 }
 
 header img {
@@ -71,13 +72,14 @@ header a:hover {
 }
 
   .container {
+    margin-top: 70px;
     flex: 1;
     max-width: 500px  ;
     margin-bottom: 50px;
     margin: 50px auto;
     padding: 20px;
     background: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
   }
   h2 {
@@ -121,7 +123,7 @@ header a:hover {
     color: #fafafa;
     padding: 20px 15px;
     font-size: 14px;
-    margin-top: auto;
+    margin-top: 210px;
 }
 
 .footer-container {
