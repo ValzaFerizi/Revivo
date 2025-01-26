@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revivo's Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header style="background-color: #fafafa;">
+        <img src="logo.jpg" alt="">
+        <ul>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+        </ul>
+    </header>
+<div class="searchbari">
+    <h1 id="para">What are <span>you </span>looking for?</h1>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <img src="search.png" alt="" srcset="">
+    </div>
+</div>
+
+<div class="te-re">
+    <h1>Our clients favourites spots!</h1>
+    <div class="biznisi-ri">
+        <div class="box">
+            <img src="sellma_studio.jpg" alt="biznesi1">
+            <h3>Sellma Studio</h3>
+            <p class="description">This is a short description of the item.</p>
+            <p class="price">See deals</p>
+            <button class="book-now"><a href="booking.html">Book Now</a></button>
+        </div>
+        <div class="box">
+            <img src="Rita's_hairsalon.jpg" alt="Item 2">
+            <h3>Rita Hairsalon</h3>
+            <p class="description">This is a short description of the item.</p>
+            <p class="price">See deals</p>
+            <button class="book-now"><a href="booking.html">Book Now</a></button>
+        </div>
+        <div class="box">
+            <img src="deluxe_lashes.jpg" alt="Item 3">
+            <h3>Deluxe Lashes</h3>
+            <p class="description">This is a short description of the item.</p>
+            <p class="price">See deals</p>
+            <button class="book-now"><a href="booking.html">Book Now</a></button>
+        </div>
+        
+    </div>
+    <h1 class="rezervimet" style="margin-left: 110px;">
+        What services are you looking for?
+    </h1>
+
+    <div class="rezervimet">
+        <div class="sherbimet">
+            <a href="booking.html">
+                <img src="Make up services.jpg" alt="Make-up Services" height="200px" width="200px">
+                <p>Make-up Appointments</p>  
+            </a>  
+        </div>
+    
+        <div class="sherbimet">
+            <a href="booking.html">
+                <img src="Hair services.jpg" alt="Hair Services" height="200px" width="200px">
+                <p>Hair Appointments</p>  
+            </a>
+        </div>
+    
+        <div class="sherbimet">
+            <a href="booking.html">
+                <img src="Lash services.jpg" alt="Lash Services" height="200px" width="200px">
+                <p>Lash Appointments</p>  
+            </a>
+        </div>
+    
+        <div class="sherbimet">
+            <a href="booking.html">
+                <img src="Nails.jpg" alt="Nail Services" height="200px" width="200px">
+                <p>Manicure / Pedicure Appointments</p>  
+            </a>  
+        </div>
+    
+        <div class="sherbimet">
+            <a href="booking.html">
+                <img src="Waxing.jpg" alt="Waxing Services" height="200px" width="200px">
+                <p>Waxing Appointments</p>  
+            </a>   
+        </div>
+    
+        <div class="sherbimet">
+            <a href="booking.html">
+                <img src="Tanning.jpg" alt="Tanning Services" height="200px" width="200px">
+                <p>Solarium Appointments</p>  
+            </a>  
+        </div>
+    </div>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-block">
+      <p>Dardani, Prishtinë</p>
+      <p> Phone: +123 456 7890 |  Email: <a href="mailto:info@company.com">Revivo@company.com</a></p></div>
+      <div class="footer-blo">
+      <p> <a href="https://www.companywebsite.com" target="_blank">www.Revivo.com</a></p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">X</a></li>
+        <li><a href="#">LinkedIn</a></li>
+    </ul>
+    <p>&copy; 2024 Revivo. All Rights Reserved.</p></div>
+    </div>
+  </footer>
+</body>
+</html>
+
