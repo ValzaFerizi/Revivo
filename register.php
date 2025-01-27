@@ -21,7 +21,7 @@ try {
         $nrTel = $_POST['nrTel'];
 
         
-        $revivo = "INSERT INTO users (Emri, Mbiemri, Username, Email, Password, Qyteti, Nr_tel) 
+        $revivo = "INSERT INTO klientet (Emri, Mbiemri, Username, Email, Password, Qyteti, Nr_tel) 
                 VALUES (:emri, :mbiemri, :username, :email, :password, :qyteti, :nr_tel)";
         
         $stmt = $conn->prepare($revivo);
