@@ -1,3 +1,34 @@
+<?php
+include 'database.php';
+
+$message = ""; 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $emri = mysqli_real_escape_string($conn, $_POST['emri']);
+    $mbiemri = mysqli_real_escape_string($conn, $_POST['mbiemri']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); 
+    $qyteti = mysqli_real_escape_string($conn, $_POST['qyteti']);
+    $nrtel = mysqli_real_escape_string($conn, $_POST['nrtel']);
+    $check_query = "SELECT * FROM clients WHERE username='$username' OR email='$email'";
+    $result = mysqli_query($conn, $check_query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $message = "Username or email already taken!";
+    } else {
+        $sql = "INSERT INTO clients (emri, mbiemri, username, email, password, qyteti, nrtel) 
+                VALUES ('$emri', '$mbiemri', '$username', '$email', '$password', '$qyteti', '$nrtel')";
+
+        if (mysqli_query($conn, $sql)) {
+            $message = "Registration successful!";
+        } else {
+            $message = "Error: " . mysqli_error($conn);
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +50,7 @@
     </header>
 
     <div>
-        <form action="register.php" method="post">
+        <form action="" method="post">
             <h2  id="titulli">Become a part of us!</h2>
             <label for="emri">Emri:</label>
             <input type="text"  name="emri"placeholder="emri" required>
