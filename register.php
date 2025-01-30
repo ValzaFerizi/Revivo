@@ -3,6 +3,8 @@
 
 include 'database.php';
 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $emri = mysqli_real_escape_string($conn, $_POST['emri']);
@@ -19,8 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO clients (emri, mbiemri, username, email, password, qyteti, nrtel)
             VALUES ('$emri', '$mbiemri', '$username', '$email', '$hashed_password', '$qyteti', '$nrtel')";
 
+
+echo "<pre>" . $sql . "</pre>";
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('User registered successfully!'); window.location.href='login.php';</script>";
+        echo "<script>alert('Miro!'); window.location.href='aboutus.html;</script>";
     } else {
         echo "Error: " . mysqli_error($conn);
     }
@@ -49,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div>
-        <form action="" method="POST">
+        <form action="register.php" method="POST">
             <h2  id="titulli">Become a part of us!</h2>
             <label for="emri">Emri:</label>
             <input type="text"  name="emri"placeholder="emri" required>
