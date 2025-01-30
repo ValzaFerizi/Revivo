@@ -19,20 +19,20 @@
     </header>
 
     <div>
-        <form action="register.php" method="POST"></form>
+        <form action="register.php" method="post">
             <h2  id="titulli">Become a part of us!</h2>
-            <label for="Emri">Emri:</label>
-            <input type="text" placeholder="Emri" required>
-            <label for="Mbiemri">Mbiemri:</label>
-            <input type="text" placeholder="Mbiemri" required>
-            <label for="Username">Username:</label>
-            <input type="text" placeholder="Username" required>
+            <label for="emri">Emri:</label>
+            <input type="text"  name="emri"placeholder="emri" required>
+            <label for="mbiemri">Mbiemri:</label>
+            <input type="text" placeholder="Mbiemri"  name="mbiemri" required>
+            <label for="username">Username:</label>
+            <input type="text" placeholder="Username"  name="username"required>
             <label for="Email">Email</label>
-            <input type="email"placeholder="Email" required>
+            <input type="email"placeholder="Email" name="email" required>
             <label for="password">Password:</label>
-            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Password" name="password" required>
             <label for="Qyteti" >Qyteti:</label>
-            <select placeholder="Qyteti">
+            <select placeholder="Qyteti" name="qyteti">
                 <option value="1">Prishtinë</option>
                 <option value="2">Prizren</option>
                 <option value="3">Mitrovica e jugut</option>
@@ -54,7 +54,7 @@
                 <option value="19">Kaçaniku</option>
             </select>
             <label for="NrTel">Numri i telefonit</label>
-            <input type="tel" placeholder="Numri i telefonit" maxlength="12">
+            <input type="tel" placeholder="Numri i telefonit" maxlength="12" name="nrtel">
 
             <button type="submit">Register</button>
             <h1 id="linkat" style="margin-top: 15px;"><a href="login.html">Have an account already?</a></h1>
