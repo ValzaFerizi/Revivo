@@ -7,27 +7,23 @@
   <link rel="stylesheet" href="style_reg.css">
 </head>
 <body>
-  <body>
-    <header>
-      <img src="logo.jpg" alt="">
-      <ul>
-          <li><a href="index.html">Home </a></li>
-          <li><a href="feedback.html">Feedback</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-         
-        
-      </ul>
+  <header>
+    <img src="logo.jpg" alt="">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
   </header>
    
-    <form action="submit">
-      <h2 id="teksti">Let's get your business registered!</h2>
-      <div class="form-container">
-       
-        <p class="paragrafi">Fill in your details below to create your business profile.</p>
+  <form action="submit">
+    <h2 id="teksti">Let's get your business registered!</h2>
+    <div class="form-container">
+      <p class="paragrafi">Fill in your details below to create your business profile.</p>
     
-        <label for="first-name">Business Name:</label>
-      <input type="text" id="bussiness-name" name="business-name" placeholder="Enter your business name" required>
+      <label for="business-name">Business Name:</label>
+      <input type="text" id="business-name" name="business-name" placeholder="Enter your business name" required>
 
       <label for="first-name">First Name:</label>
       <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
@@ -46,27 +42,32 @@
 
       <label for="region">Region:</label>
       <input type="text" id="region" name="region" placeholder="Enter your region" required>
-
-      <button type="submit" class="submit-btn">Register Your Business</button>
-    </form>
-  </div>
-  <footer>
+<label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8" title="Password must be at least 8 characters long">
+  <button type="submit" class="submit-btn">Register Your Business</button>
+    </div>
+  </form>
+<footer>
     <div class="footer-container">
-        <div class="footer-block">
-      <p>Dardani, Prishtinë</p>
-      <p> Phone: +123 456 7890 |  Email: <a href="mailto:info@company.com">Revivo@company.com</a></p></div>
-      <div class="footer-blo">
-      <p> <a href="https://www.companywebsite.com" target="_blank">www.Revivo.com</a></p>
-      <ul class="social-links">
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">X</a></li>
-        <li><a href="#">LinkedIn</a></li>
-    </ul>
-    <p>&copy; 2024 Revivo. All Rights Reserved.</p></div>
+      <div class="footer-block">
+        <p>Dardani, Prishtinë</p>
+        <p>Phone: +123 456 7890 | Email: <a href="mailto:info@company.com">Revivo@company.com</a></p>
+      </div>
+      <div class="footer-block">
+        <p><a href="https://www.companywebsite.com" target="_blank">www.Revivo.com</a></p>
+        <ul class="social-links">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">X</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+        <p>&copy; 2024 Revivo. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
   <script src="scriptValidimiBiznes.js"></script>
+</body>
+</html>
 </body>
 </html>
 
