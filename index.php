@@ -27,28 +27,38 @@
 <div class="te-re">
     <h1>Our clients favourites spots!</h1>
     <div class="biznisi-ri">
-        <div class="box">
-            <img src="sellma_studio.jpg" alt="biznesi1">
-            <h3>Sellma Studio</h3>
-            <p class="description">This is a short description of the item.</p>
-            <p class="price">See deals</p>
-            <button class="book-now"><a href="booking.html">Book Now</a></button>
-        </div>
-        <div class="box">
-            <img src="Rita's_hairsalon.jpg" alt="Item 2">
-            <h3>Rita Hairsalon</h3>
-            <p class="description">This is a short description of the item.</p>
-            <p class="price">See deals</p>
-            <button class="book-now"><a href="booking.html">Book Now</a></button>
-        </div>
-        <div class="box">
-            <img src="deluxe_lashes.jpg" alt="Item 3">
-            <h3>Deluxe Lashes</h3>
-            <p class="description">This is a short description of the item.</p>
-            <p class="price">See deals</p>
-            <button class="book-now"><a href="booking.html">Book Now</a></button>
-        </div>
+        <?php
+        require 'database.php'; 
         
+       
+        $query = "SELECT * FROM businesses ORDER BY created_at DESC LIMIT 3";
+        $result = $conn->query($query);
+        
+       
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $business_name = $row['business_name'];
+                $description = $row['description'];
+                $image = $row['image'];
+                $deal_link = $row['deal_link'];
+                ?>
+        
+                <div class="box">
+                    <img src="<?php echo $image; ?>" alt="<?php echo $business_name; ?>">
+                    <h3><?php echo $business_name; ?></h3>
+                    <p class="description"><?php echo $description; ?></p>
+                    <p class="price">See deals</p>
+                    <button class="book-now"><a href="<?php echo $deal_link; ?>">Book Now</a></button>
+                </div>
+        
+                <?php
+            }
+        } else {
+            echo "No businesses found!";
+        }
+        
+        $conn->close();
+        ?>
     </div>
     <h1 class="rezervimet" style="margin-left: 110px;">
         What services are you looking for?
