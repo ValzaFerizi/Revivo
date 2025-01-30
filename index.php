@@ -28,7 +28,7 @@
     <h1>Our clients favourites spots!</h1>
     <div class="biznisi-ri">
         <?php
-        require 'database.php'; // Include the database connection
+        require 'database.php'; 
         
        
         $query = "SELECT * FROM businesses ORDER BY created_at DESC LIMIT 3";
