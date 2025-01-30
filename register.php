@@ -1,21 +1,32 @@
-<?php
 
+<?php
 
 include 'database.php';
 
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<h3>🟢 Form submitted!</h3>";
+    
+    $emri = mysqli_real_escape_string($conn, $_POST['emri']);
+    $mbiemri = mysqli_real_escape_string($conn, $_POST['mbiemri']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $qyteti = $_POST['qyteti'];
+    $nrtel = mysqli_real_escape_string($conn, $_POST['nrtel']);
 
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-    exit;  
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+
+    $sql = "INSERT INTO clients (emri, mbiemri, username, email, password, qyteti, nrtel)
+            VALUES ('$emri', '$mbiemri', '$username', '$email', '$hashed_password', '$qyteti', '$nrtel')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('User registered successfully!'); window.location.href='login.php';</script>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -98,4 +109,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </footer>
     </div>
 <script src="scriptValidim.js"></script>
-    </body></html>
+    </body>
+    </html>
