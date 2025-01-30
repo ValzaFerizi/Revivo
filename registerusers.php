@@ -1,34 +1,42 @@
-<?php
-include 'database.php';
 
-$message = ""; 
+<?php
+
+$servername = "localhost"; 
+$username = "root"; 
+$password = "";
+$dbname = "revivo"; 
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $emri = mysqli_real_escape_string($conn, $_POST['emri']);
-    $mbiemri = mysqli_real_escape_string($conn, $_POST['mbiemri']);
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); 
-    $qyteti = mysqli_real_escape_string($conn, $_POST['qyteti']);
-    $nrtel = mysqli_real_escape_string($conn, $_POST['nrtel']);
-    $check_query = "SELECT * FROM clients WHERE username='$username' OR email='$email'";
-    $result = mysqli_query($conn, $check_query);
+    
+    $emri = $_POST['emri'];
+    $mbiemri = $_POST['mbiemri'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $qyteti = $_POST['qyteti'];
+    $nrtel = $_POST['nrtel'];
+    
+   
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    if (mysqli_num_rows($result) > 0) {
-        $message = "Username or email already taken!";
-    } else {
-        $sql = "INSERT INTO clients (emri, mbiemri, username, email, password, qyteti, nrtel) 
-                VALUES ('$emri', '$mbiemri', '$username', '$email', '$password', '$qyteti', '$nrtel')";
+    
+    $sql = "INSERT INTO users (emri, mbiemri, username, email, password, qyteti, nrtel) 
+            VALUES ('$emri', '$mbiemri', '$username', '$email', '$hashedPassword', '$qyteti', '$nrtel')";
 
-        if (mysqli_query($conn, $sql)) {
-            $message = "Registration successful!";
-        } else {
-            $message = "Error: " . mysqli_error($conn);
-        }
-    }
+if (mysqli_query($conn, $sql)) {
+    header("Location: success.php"); 
+    exit();
+} else {
+   
+    echo "Error: " . mysqli_error($conn);
 }
-?>
+}
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div>
-        <form action="" method="post">
+        <form action="register.php" method="POST">
             <h2  id="titulli">Become a part of us!</h2>
             <label for="emri">Emri:</label>
             <input type="text"  name="emri"placeholder="emri" required>
@@ -87,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="NrTel">Numri i telefonit</label>
             <input type="tel" placeholder="Numri i telefonit" maxlength="12" name="nrtel">
 
-            <button type="submit">Register</button>
+            <button type="submit" name="submit">Register</button>
             <h1 id="linkat" style="margin-top: 15px;"><a href="login.html">Have an account already?</a></h1>
             <h1 id="linkat" style="margin-left: 165px;"><a href="SignupBussines.Html">Register as business!</a></h1>
                 </form>
@@ -110,4 +118,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </footer>
     </div>
 <script src="scriptValidim.js"></script>
-    </body></html>
+    </body>
+    </html>
