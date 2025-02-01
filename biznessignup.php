@@ -63,7 +63,7 @@ $stmt->bind_param("ssssssss", $business_name, $first_name, $last_name, $email, $
 
 if ($stmt->execute()) {
     echo "Debug: Data inserted successfully!<br>";
-    ("Location: login.html"); 
+    ("Location: login-bizneset.html"); 
     exit();
 } else {
     echo "Error: " . $stmt->error;

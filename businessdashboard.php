@@ -16,7 +16,7 @@ $user_id = $_SESSION['user_id'];
 
 $sql_business = "SELECT id, business_name, email, phone
                  FROM businesses 
-                 WHERE owner_id = $user_id";
+                 WHERE owner_id = 6";
 $result_business = $conn->query($sql_business);
 $business = $result_business->fetch_assoc();
 

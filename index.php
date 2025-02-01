@@ -13,7 +13,7 @@
             <li><a href="feedback.html">Feedback</a></li>
             <li><a href="aboutus.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="registerusers.php">Sign Up</a></li>
         </ul>
     </header>
 <div class="searchbari">
@@ -31,24 +31,24 @@
         require 'database.php'; 
         
        
-        $query = "SELECT * FROM businesses ORDER BY created_at DESC LIMIT 3";
+        $query = "SELECT * FROM businesses ORDER BY id DESC LIMIT 3";
         $result = $conn->query($query);
         
        
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $business_name = $row['business_name'];
-                $description = $row['description'];
-                $image = $row['image'];
-                $deal_link = $row['deal_link'];
+                $email = $row['email'];
+                $country = $row['country'];
+                // <!-- $deal_link = $row['deal_link']; -->
                 ?>
         
                 <div class="box">
-                    <img src="<?php echo $image; ?>" alt="<?php echo $business_name; ?>">
+                    <!-- <img src="<?php echo $image; ?>" alt="<?php echo $business_name; ?>"> -->
                     <h3><?php echo $business_name; ?></h3>
-                    <p class="description"><?php echo $description; ?></p>
+                    <p class="description"><?php echo $email; ?></p>
                     <p class="price">See deals</p>
-                    <button class="book-now"><a href="<?php echo $deal_link; ?>">Book Now</a></button>
+                    <!-- <button class="book-now"><a href="<?php echo $deal_link; ?>">Book Now</a></button> -->
                 </div>
         
                 <?php
