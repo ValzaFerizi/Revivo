@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $sql = "SELECT id, password FROM users WHERE email = '$email'";
+    $sql = "SELECT id, password FROM businesses WHERE email = '$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
 
-            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['business_id'] = $row['id'];
             $_SESSION['email'] = $email;
 
             
