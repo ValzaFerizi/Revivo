@@ -29,6 +29,45 @@
     </select>
     <button id="show-calendar">Find Available Salons</button>
   </div>
+
+  <h1>Our clients favourites spots!</h1>
+    <div class="biznisi-ri">
+        <?php
+        require 'database.php'; 
+        
+       
+        $query = "SELECT * FROM businesses ORDER BY id DESC LIMIT 3";
+        $result = $conn->query($query);
+        
+       
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $business_name = $row['business_name'];
+                $email = $row['email'];
+                $country = $row['country'];
+                // <!-- $deal_link = $row['deal_link']; -->
+                ?>
+        
+                <div class="box">
+                    <!-- <img src="<?php echo $image; ?>" alt="<?php echo $business_name; ?>"> -->
+                    <h3><?php echo $business_name; ?></h3>
+                    <p class="description"><?php echo $email; ?></p>
+                    <p class="price">See deals</p>
+                    <!-- <button class="book-now"><a href="<?php echo $deal_link; ?>">Book Now</a></button> -->
+                </div>
+        
+                <?php
+            }
+        } else {
+            echo "No businesses found!";
+        }
+        
+        $conn->close();
+        ?>
+    </div>
+
+    <div class="te-re">
+    <h1>Our clients favourites spots!</h1>
     <footer>
       <div class="footer-container">
           <div class="footer-block">

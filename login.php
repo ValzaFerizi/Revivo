@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Session variables set!<br>"; 
 
            
-            header("Location: admin.php");
+            header("Location: index.php");
             exit();
         } else {
             

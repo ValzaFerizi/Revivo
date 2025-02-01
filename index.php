@@ -66,28 +66,28 @@
 
     <div class="rezervimet">
         <div class="sherbimet">
-            <a href="booking.html">
+            <a href="booking.php">
                 <img src="Make up services.jpg" alt="Make-up Services" height="200px" width="200px">
                 <p>Make-up Appointments</p>  
             </a>  
         </div>
     
         <div class="sherbimet">
-            <a href="booking.html">
+            <a href="booking.php">
                 <img src="Hair services.jpg" alt="Hair Services" height="200px" width="200px">
                 <p>Hair Appointments</p>  
             </a>
         </div>
     
         <div class="sherbimet">
-            <a href="booking.html">
+            <a href="booking.php">
                 <img src="Lash services.jpg" alt="Lash Services" height="200px" width="200px">
                 <p>Lash Appointments</p>  
             </a>
         </div>
     
         <div class="sherbimet">
-            <a href="booking.html">
+            <a href="booking.php">
                 <img src="Nails.jpg" alt="Nail Services" height="200px" width="200px">
                 <p>Manicure / Pedicure Appointments</p>  
             </a>  
@@ -101,7 +101,7 @@
         </div>
     
         <div class="sherbimet">
-            <a href="booking.html">
+            <a href="booking.php">
                 <img src="Tanning.jpg" alt="Tanning Services" height="200px" width="200px">
                 <p>Solarium Appointments</p>  
             </a>  
