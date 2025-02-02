@@ -28,6 +28,7 @@ $sql_appointments = "SELECT a.id, a.service, a.appointment_date, a.status, u.use
 $result_appointments = $conn->query($sql_appointments);
 
 
+
 while ($row = $result_appointments->fetch_assoc()) {
     if ($row['status'] == 'Pending') {
         $pending_appointments[] = $row;
@@ -134,6 +135,7 @@ while ($row = $result_appointments->fetch_assoc()) {
                             echo "<tr><td colspan='3'>No accepted appointments.</td></tr>";
                         }
                         ?>
+                        
                     </tbody>
                 </table>
             </section>

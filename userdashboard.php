@@ -2,7 +2,7 @@
 session_start();
 require 'database.php';
 
-// Check if user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -10,7 +10,14 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Fetch user appointments
+$query_user = "SELECT emri FROM users WHERE id = ?";
+$stmt_user = $conn->prepare($query_user);
+$stmt_user->bind_param("i", $user_id);
+$stmt_user->execute();
+$result_user = $stmt_user->get_result();
+$user = $result_user->fetch_assoc();
+$user_name = $user['emri'];
+
 $query = "SELECT a.id, b.business_name, a.appointment_type, a.appointment_date 
           FROM appointments a 
           JOIN businesses b ON a.business_id = b.id 
@@ -29,10 +36,22 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="userDashboard.css">
+    
 </head>
 <body>
-    <h2>Welcome to Your Dashboard</h2>
+    <header>
+        <img src="logo.jpg" alt="">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+        </ul>
+    </header>
+<body>
+<h2>Welcome, <?php echo htmlspecialchars($user_name); ?>! 👋</h2>
+  
 
     <?php if (isset($_GET['success'])) { ?>
         <p style="color: green;">✅ Appointment booked successfully!</p>
@@ -53,14 +72,24 @@ $result = $stmt->get_result();
                 echo "<td>" . htmlspecialchars($row['appointment_type']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['appointment_date']) . "</td>";
                 echo "</tr>";
+                echo "<td>
+                <form action='delete-appointment.php' method='POST' onsubmit='return confirm(\"Are you sure?\");'>
+                <input type='hidden' name='appointment_id' value='" . $row['id'] . "'>
+                <button type='submit' style='color: red;'>Delete</button>
+            </form>
+            </td>";
             }
         } else {
             echo "<tr><td colspan='3'>No appointments found.</td></tr>";
         }
         ?>
+        <?php if (isset($_GET['deleted'])) { ?>
+    <p style="color: red;">🗑️ Appointment deleted successfully!</p>
+<?php } ?>
     </table>
 
     <p><a href="index.php">Book Another Appointment</a></p>
+    
 </body>
 </html>
 
