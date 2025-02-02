@@ -28,35 +28,31 @@
     </div>
 </div>
 
-
 <div class="te-re">
-    <h1>Our clients favourites spots!</h1>
+    <h1>Our clients' favourite spots!</h1>
     <div class="biznisi-ri">
-    <?php
-require 'database.php'; 
+        <?php
+        require 'database.php'; 
 
-$query = "SELECT * FROM businesses ORDER BY id";
-$result = $conn->query($query);
+        $query = "SELECT * FROM businesses ORDER BY id";
+        $result = $conn->query($query);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo '<div class="box">';
-        echo '<h3>' . htmlspecialchars($row['business_name']) . '</h3>';
-        echo '<p class="description">' . htmlspecialchars($row['description']) . '</p>';
-        echo '<p class="price"><a href="booking.php?id=' . $row['id'] . '">Book now</a></p>';
-        echo '</div>';
-    }
-} else {
-    echo "<p>No businesses found!</p>";
-}
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="box">';
+                echo '<h3>' . htmlspecialchars($row['business_name']) . '</h3>';
+                echo '<p class="description">' . htmlspecialchars($row['description']) . '</p>';
+                echo '<p class="price"><a href="booking.php?id=' . $row['id'] . '">Book now</a></p>';
+                echo '</div>';
+            }
+        } else {
+            echo "<p>No businesses found!</p>";
+        }
 
-
-
-        
-        
         $conn->close();
         ?>
     </div>
+</div>
     <h1 class="rezervimet" style="margin-left: 110px;">
         What services are you looking for?
     </h1>

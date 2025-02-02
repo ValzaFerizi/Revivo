@@ -166,62 +166,62 @@ margin-top: 35px;}
 .search-bar button:hover img {
     transform: scale(1.1);
 }
-
-
-.business-grid {
-    padding: 50px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Container for the business cards */
+.biznisi-ri {
+    display: flex;
+    flex-wrap: wrap; /* Ensures that the cards wrap to the next line if there's no space */
+    justify-content: space-between; /* Ensures equal space between the cards */
+    gap: 20px; /* Adds space between the cards */
 }
 
-.business-card {
-    background: white;
+/* Style for each card */
+.box {
+    background-color: #fff;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.business-card:hover {
-    transform: translateY(-5px);
-}
-
-.card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #eee;
-}
-
-.card-content {
     padding: 20px;
+    width: calc(33.333% - 20px); /* This sets the cards to be one-third of the container's width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.price {
-    font-size: 1.2em;
-    color: #1a1a1a;
-    margin: 15px 0;
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.box .description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.box .price {
+    font-size: 18px;
     font-weight: bold;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background: #1a1a1a;
-    color: white;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+.box .price a {
     text-decoration: none;
-    border: 2px solid transparent;
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
-.btn:hover {
-    background: #333;
-    transform: translateY(-2px);
+.box .price a:hover {
+    color: #0056b3;
 }
+
+@media (max-width: 768px) {
+    .box {
+        width: 100%; 
+    }
+}
+
 
 
 .rezervimet-title {
@@ -378,3 +378,44 @@ footer {
     }
 } 
 
+/* Style for each card */
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.box .description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.box .price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box .price a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.box .price a:hover {
+    color: #0056b3;
+}
