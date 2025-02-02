@@ -16,7 +16,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<pre>POST Data:\n";
     print_r($_POST);
@@ -30,44 +29,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $country = trim($_POST['country']);
     $region = trim($_POST['region']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $description = isset($_POST['description']) ? trim($_POST['description']) : '';
+    $images = isset($_POST['images']) ? trim($_POST['images']) : '';
 
     if (empty($business_name) || empty($first_name) || empty($last_name) || empty($email) || empty($phone) || empty($country) || empty($region) || empty($_POST['password'])) {
         die("Error: All fields are required.");
     }
 
- 
-    $sql = "INSERT INTO businesses ($business_name, $first_name, $last_name, $email, $phone, $country, $region, $password)
-            VALUES ('business_name', 'first_name', 'last_name', 'email', 'phone', 'country', 'region', 'password')";
-$business_name = trim($_POST['business-name']);
-$first_name = trim($_POST['first-name']);
-$last_name = trim($_POST['last-name']);
-$email = trim($_POST['email']);
-$phone = trim($_POST['phone']);
-$country = trim($_POST['country']);
-$region = trim($_POST['region']);
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die("Error: Invalid email format.");
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Error: Invalid email format.");
+    }
+
+    $sql = "INSERT INTO businesses (business_name, first_name, last_name, email, phone, country, region, password, description, images)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+    if ($stmt === false) {
+        die("Error preparing statement: " . $conn->error);
+    }
+
+    $stmt->bind_param("ssssssssss", $business_name, $first_name, $last_name, $email, $phone, $country, $region, $password, $description, $images);
+
+    if ($stmt->execute()) {
+        echo "Debug: Data inserted successfully!<br>";
+        header("Location: BiznesDashboard.html"); 
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
-
-$sql = "INSERT INTO businesses (business_name, first_name, last_name, email, phone, country, region, password)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
-$stmt = $conn->prepare($sql);
-if ($stmt === false) {
-    die("Error preparing statement: " . $conn->error);
-}
-
-$stmt->bind_param("ssssssss", $business_name, $first_name, $last_name, $email, $phone, $country, $region, $password);
-
-
-if ($stmt->execute()) {
-    echo "Debug: Data inserted successfully!<br>";
-    ("Location: login-bizneset.html"); 
-    exit();
-} else {
-    echo "Error: " . $stmt->error;
-}
-
-$stmt->close();
-}?>
+?>

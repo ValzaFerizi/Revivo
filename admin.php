@@ -17,31 +17,98 @@ $result_businesses = $conn->query($sql_businesses);
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="adminCss.css">
+    <link rel="stylesheet" href="admin.css">
+    <style>
+
+
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fafafa;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 15px;
+}
+
+header img {
+    height: 45px;
+    object-fit: contain;
+    justify-self: left;
+    margin-right: 750px;
+    margin-left: 10px;
+}
+
+header ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    list-style: none;
+}
+
+header li {
+    margin: 0 6px;
+    color: #1a1a1a;
+}
+header a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    padding:  5px;
+    transition: background-color 0.3s ease-in-out;
+   
+}
+
+header a:hover {
+   color: #1a1a1a;
+   border-bottom: 1px solid #1a1a1a;
+   border-bottom-width: thin;
+   padding: 5px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    header li {
+        margin: 10px 0;
+    }
+}</style>
 </head>
 <body>
+
+<header>
+        <img src="logo.jpg" alt="">
+        <ul>
+           <li><a href="index.html">Home </a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        
+        </ul>
+    </header>
     <div class="dashboard">
         <aside class="sidebar">
             <h2>Admin Panel</h2>
-            <nav>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Manage Appointments</a></li>
-                
-                    <li><a href="#">Log Out</a></li>
-                </ul>
-            </nav>
+          
         </aside>
 
         <main class="main-content">
-            <header>
+            <div class="header">
                 <h1>Welcome, Admin.</h1>
                 <p>Manage your wellness services efficiently.</p>
-            </header>
+            </div>
 
             <section class="cards">
                 <div class="card">
@@ -143,5 +210,21 @@ $result_businesses = $conn->query($sql_businesses);
             </section>
         </main>
     </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-block">
+          <p>Dardani, Prishtinë</p>
+          <p> Phone: +123 456 7890 |  Email: <a href="mailto:info@company.com">Revivo@company.com</a></p></div>
+          <div class="footer-blo">
+          <p> <a href="https://www.companywebsite.com" target="_blank">www.Revivo.com</a></p>
+          <ul class="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+        <p>&copy; 2024 Revivo. All Rights Reserved.</p></div>
+        </div>
+      </footer>
 </body>
 </html>
