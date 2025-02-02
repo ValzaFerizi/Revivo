@@ -1,56 +1,61 @@
 <?php
-
+session_start();
+require 'database.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-session_start();
-include 'database.php';
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "Form submitted!<br>"; 
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-   
-    echo "Email: $email<br>"; 
-    echo "Password: $password<br>"; 
+    $stmt = $conn->prepare("SELECT * FROM businesses WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-   
-    if (empty($email) || empty($password)) {
-        die("Error: All fields are required.");
-    }
-
-
-    $sql = "SELECT id, password FROM businesses WHERE email = '$email'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-
+    if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
+        if (password_verify($password, $row['password'])) {  
+            $_SESSION['business_name'] = $row['business_name'];
+            $_SESSION['business_id'] = $row['id']; 
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            echo "❌ Incorrect password.";
+        }
+    } else {
+        echo "❌ Email not found.";
+    }
+}
+echo "Email: $email <br>";
+echo "Password: $password <br>";
 
-            $_SESSION['business_id'] = $row['id'];
-            $_SESSION['email'] = $email;
+if ($result->num_rows === 1) {
+    $row = $result->fetch_assoc();
+    echo "Found user: " . $row['email'] . "<br>";
+    echo "Stored password: " . $row['password'] . "<br>";
 
-            
+    if (password_verify($password, $row['password'])) {
+        echo "✅ Password matches!";
+    } else {
+        echo "❌ Password doesn't match.";
+    }
+} else {
+    echo "❌ No user found.";
+}
+
+   
+    
             echo "Session variables set!<br>"; 
 
            
-            header("Location: admin.php");
+            header("Location: BiznesDashboard.php");
             exit();
-        } else {
-            
-            die("Error: Invalid email or password.");
-        }
-    } else {
       
-        die("Error: Invalid email or password.");
-    }
-} else {
-    echo "Form not submitted!<br>"; 
-}
 
-$conn->close();
+
+
 ?>
